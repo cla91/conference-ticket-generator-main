@@ -41,7 +41,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [solution URL](https://www.frontendmentor.io/solutions/vite-and-tailwindcss-for-ticket-generator-8BH7fMQwJ1)
 - Live Site URL: [live site URL](https://cla91.github.io/conference-ticket-generator-main/)
 
 ## My process
