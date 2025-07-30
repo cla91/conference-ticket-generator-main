@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Mentor | Conference ticket generator</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="flex flex-col items-center text-center gap-10 px-4 py-9 md:py-10 
+bg-[url(/src/images/pattern-lines.svg),url(/src/images/pattern-circle.svg),url(/src/images/pattern-squiggly-line-bottom-mobile-tablet.svg),url(/src/images/pattern-squiggly-line-top.svg),url(/src/images/background-mobile.png)]
+[background-size:cover,auto,70%,30%,cover]
+[background-position:center,top_-10%_left_-2%,bottom_left,top_5%_right,center]
+md:bg-[url(/src/images/pattern-lines.svg),url(/src/images/pattern-circle.svg),url(/src/images/pattern-circle.svg),url(/src/images/pattern-squiggly-line-bottom-mobile-tablet.svg),url(/src/images/pattern-squiggly-line-top.svg),url(/src/images/background-tablet.png)]
+md:[background-size:cover,auto,auto,70%,30%,cover]
+md:[background-position:center,top_-10%_left_-2%,center_right_-7rem,bottom_left,top_5%_right,center]
+lg:bg-[url(/src/images/pattern-lines.svg),url(/src/images/pattern-circle.svg),url(/src/images/pattern-circle.svg),url(/src/images/pattern-squiggly-line-bottom-desktop.svg),url(/src/images/pattern-squiggly-line-top.svg),url(/src/images/background-desktop.png)]
+lg:[background-size:cover,auto,auto,auto,30%,cover]
+lg:[background-position:center,top_-10%_left_-2%,center_right_14rem,bottom_left,top_5%_right,center]
+">
+  <header>
+    <nav><a href="/"><img src="./src/images/logo-full.svg" alt="Coding Conf full logo" class="h-6 md:h-auto"></a></nav>
+  </header>
+  <main>
+    <!-- Form starts -->
+    <article data-form-article class="grid gap-10 md:justify-items-center">
+      <header>
+        <h1>Your Journey to Coding Conf 2025
+          Starts Here!
+        </h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </header>
+      <form class="grid gap-6 text-left md:w-[32.625rem] lg:w-[28.75rem]">
+        <div class="grid gap-3">
+          <label for="upload-avatar"
+            class="relative hover:*:bg-white/20 focus-within:*:outline-[0.188rem] focus-within:*:outline-neutral-500 focus-within:*:outline-offset-[0.125rem] focus-within:*:ring-2 focus-within:*:ring-neutral-900">Upload
+            Avatar
+            <div aria-live="assertive" data-upload-preview
+              class="backdrop-blur-xs border border-dashed border-neutral-500 rounded-xl flex flex-col items-center justify-center px-4 py-4.5 bg-white/8 hover:bg-white/20 text-center gap-4">
+              <img class="p-2.5 w-[3.125rem] h-[3.125rem] rounded-xl bg-white/10 border border-neutral-700"
+                src="./src/images/icon-upload.svg" alt="upload icon">
+              <p class="text-lg text-neutral-300">Drag and drop or click to upload</p>
+            </div>
+            <input class="sr-only" type="file" name="upload-avatar" id="upload-avatar" accept=".jpg, .jpeg ,.png"
+              aria-describedby="file-input-help" required>
+          </label>
+          <p id="file-input-help" aria-live="assertive" class="flex items-center gap-2 text-xs"><img
+              src="./src/images/icon-info.svg" alt="info icon"><span>Upload
+              your photo (JPG or PNG,
+              max size: 500KB).</span></p>
+        </div>
+        <label>Full Name <input type="text" name="fullName" id="fullName" required></label>
+        <label class="">Email Address <input type="email" name="email" id="email" placeholder="example@email.com"
+            required>
+          <p aria-live="assertive" class="flex items-center gap-2 text-xs text-orange-500 hidden">
+            <img src="./src/images/icon-info.svg" alt="info icon" class="error-info-icon-filter">Please
+            enter a valid
+            email
+            address.
+          </p>
+        </label>
+        <label class="">GitHub Username <input type="text" name="gitUsername" id="gitUsername"
+            placeholder="@yourusername" required></label>
+        <button
+          class="hover:bg-orange-700 hover:shadow-[0_0.25rem_0_var(--color-orange-500)] focus:ring-2 focus:ring-black focus:outline-2 focus:outline-white focus:outline-offset-2 text-xl font-extrabold bg-orange-500 text-neutral-900 rounded-xl px-6 py-4"
+          type="submit">Generate My Ticket</button>
+      </form>
+    </article>
+    <!-- Form ends -->
+
+    <!-- Generated tickets starts -->
+    <article data-ticket-article class="grid gap-10 justify-items-center hidden">
+      <header>
+        <h1>Congrats, <span data-ticket-firstName
+            class="bg-gradient-to-r from-orange-500 to-white text-transparent bg-clip-text">Nome</span>
+          <span data-ticket-lastName
+            class="bg-gradient-to-r from-orange-500 to-white text-transparent bg-clip-text">Cognome!</span> Your
+          ticket
+          is ready.
+        </h1>
+        <p class="max-w-[43ch]">We've emailed your ticket to <span data-ticket-email
+            class="text-orange-500">email@address.com</span> and
+          will send updates in
+          the
+          run up to the event.</p>
+      </header>
+      <div class="grid grid-cols-1 grid-rows-1">
+        <img src="./src/images/pattern-ticket.svg" alt="" role="presentation" class="col-start-1 row-start-1 h-full">
+        <div
+          class="col-start-1 row-start-1 grid grid-cols-[1fr_auto] grid-rows-[auto_auto] gap-y-1 text-left p-4 md:p-6 items-center">
+
+          <section class="grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-3 gap-y-2 md:self-baseline">
+            <img class="row-span-2 w-[1.813rem] h-[1.813rem] mt-2 md:w-[2.5rem] md:h-[2.5rem] md:mt-3"
+              src="./src/images/logo-mark.svg" alt="logo">
+            <h2 class="text-2xl font-bold md:text-[2.5rem]">Coding Conf</h2>
+            <p class="col-start-2 text-sm text-neutral-300 md:text-lg">Jan 31, 2025 / Austin, TX</p>
+
+          </section>
+          <section class="grid grid-cols-[auto_1fr] grid-rows-[auto_auto] items-center gap-x-3 text-left md:self-end">
+            <img data-ticket-avatar
+              class="row-span-2 w-[2.813rem] h-[2.813rem] rounded-sm md:w-[5rem] md:h-[5rem] md:rounded-xl "
+              src="./src/images/image-avatar.jpg" alt="">
+            <h3 data-ticket-full-name class="font-medium text-xl md:text-3xl">Full name</h3>
+            <p class="col-start-2 flex gap-1 items-center text-neutral-300 text-sm md:text-[1.25rem]"><img
+                src="./src/images/icon-github.svg" alt="github icon"><span data-ticket-gitUsername>@gitUsername</span>
+            </p>
+          </section>
+          <section class="row-span-2 row-start-1 col-start-2 flex items-center">
+            <p data-ticket-number
+              class="rotate-90 origin-center font-medium text-[1.375rem] text-neutral-500 md:text-3xl md:translate-x-1/4">
+              #00000</p>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+
+
+  <!-- Generated tickets ends -->
+
+  <footer class="">
+    Challenge by <a class="underline text-orange-500 hover:text-orange-700"
+      href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a class="underline text-orange-500 hover:text-orange-700" href="https://cla91.github.io/">Claudia
+      Cantiani</a>.
+  </footer>
+
+
+
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

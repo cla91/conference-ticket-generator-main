@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-inconsolata: "Inconsolata",
+    monospace;
+  --color-neutral-300: hsl(252, 6%, 83%);
+  --color-neutral-500: hsl(245, 15%, 58%);
+  --color-neutral-700: hsl(245, 19%, 35%);
+  --color-neutral-900: hsl(248, 70%, 10%);
+  --color-orange-500: hsl(7, 88%, 67%);
+  --color-orange-700: hsl(7, 71%, 60%);
+}
+
+@layer base {
+
+  body {
+    @apply font-inconsolata text-white min-h-screen;
+    @apply text-[1.25rem] leading-tight md:text-2xl md:leading-tight;
+    @apply bg-no-repeat;
+  }
+
+  label {
+    @apply text-xl font-medium;
+    @apply flex flex-col gap-3;
+    @apply cursor-pointer;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    @apply border border-neutral-500 rounded-xl p-4 backdrop-blur-xs bg-white/8;
+    @apply placeholder:text-neutral-300 placeholder:text-lg;
+    @apply text-lg font-normal;
+    @apply hover:bg-white/20;
+    @apply focus:outline-[0.188rem] focus:outline-neutral-500 focus:outline-offset-[0.125rem];
+    @apply focus:ring-2 focus:ring-neutral-900;
+  }
+
+  header {
+    @apply flex flex-col items-center gap-5;
+
+    h1 {
+      @apply max-w-[28ch] text-3xl md:text-6xl tracking-[-1px] font-extrabold;
+    }
+
+    p {
+      @apply text-neutral-300;
+    }
+  }
+}
+
+@layer utilities {
+  .error-info-icon-filter {
+    @apply filter-[invert(20%)_sepia(73%)_saturate(3251%)_hue-rotate(322deg)_brightness(100%)_contrast(92%)];
+  }
+}
